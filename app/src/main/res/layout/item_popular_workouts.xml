@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="workout"
+            type="com.app.ebfitapp.model.PopularWorkoutsModel" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/workoutRoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="250dp"
+            android:layout_height="175dp"
+            app:cardCornerRadius="8dp">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="175dp"
+                android:getImage="@{workout.imageURL}"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="bottom"
+                android:background="@color/transparent_2"
+                android:fontFamily="@font/robotobold"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:text="@{workout.workoutName}"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:ignore="RtlSymmetry" />
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+</layout>

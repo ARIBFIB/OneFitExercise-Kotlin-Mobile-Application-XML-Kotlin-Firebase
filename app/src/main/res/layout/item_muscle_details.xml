@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="exercise"
+            type="com.app.ebfitapp.model.BodyPartExercisesItem" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/muscleDetailLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_6dp_background"
+        android:backgroundTint="@color/light_gray"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="135dp"
+            android:layout_height="110dp"
+            android:background="@drawable/shape_rounded_corners_6">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:getImage="@{exercise.gifUrl}"
+                android:scaleType="fitXY" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginVertical="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/robotomedium"
+                android:gravity="center|start"
+                android:hint="@string/exercise_name"
+                android:maxLines="2"
+                android:text="@{exercise.name}"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="21sp"
+                tools:ignore="NestedWeights" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/round_6dp_background"
+                        android:backgroundTint="@color/red"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:hint="@string/target"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="3dp"
+                        android:text="@{exercise.target}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="10sp"
+                        tools:ignore="RtlSymmetry,SmallSp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/round_6dp_background"
+                        android:backgroundTint="@color/orange"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:hint="@string/equipment"
+                        android:paddingHorizontal="5dp"
+                        android:paddingVertical="3dp"
+                        android:text="@{exercise.equipment}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="10sp"
+                        tools:ignore="RtlSymmetry,SmallSp" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/baseline_chevron_right_24"
+            android:backgroundTint="@color/white" />
+
+    </LinearLayout>
+
+</layout>

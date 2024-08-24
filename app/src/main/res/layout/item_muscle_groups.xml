@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="muscle"
+            type="com.app.ebfitapp.model.MuscleGroupModel" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/muscleRootFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginEnd="15dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="175dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="6dp">
+
+            <ImageView
+                android:id="@+id/muscleImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@color/transparent_2"
+                android:getImage="@{muscle.muscleImageURL}"/>
+
+            <TextView
+                android:id="@+id/muscleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/revolutiongothic_extra_bold"
+                android:textColor="@color/red"
+                android:textSize="24sp"
+                android:text="@{muscle.muscleName}"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+</layout>

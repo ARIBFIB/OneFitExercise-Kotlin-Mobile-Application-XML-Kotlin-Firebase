@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    tools:context=".fragment.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/homeRootLinear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="center|start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/timeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/revolutiongothic_light"
+                    android:text="Good morning,"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/nicknameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/revolutiongothic_extra_bold"
+                    android:gravity="center|start"
+                    android:hint="@string/username"
+                    android:textColor="@color/red"
+                    android:textColorHint="@color/silver"
+                    android:textSize="21sp" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_6dp_background"
+                android:backgroundTint="@color/light_gray"
+                android:padding="10dp"
+                android:src="@drawable/baseline_notifications_none_24" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/revolutiongothic_regular"
+            android:text="Today's effort makes you who you'll be tomorrow.\nGive it your best."
+            android:textColor="@color/silver"
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round_6dp_background"
+            android:backgroundTint="@color/light_gray"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <me.tankery.lib.circularseekbar.CircularSeekBar
+                    android:id="@+id/circularSeekBar"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:cs_circle_progress_color="@color/streak"
+                    app:cs_circle_stroke_width="4dp"
+                    app:cs_circle_style="square"
+                    app:cs_circle_x_radius="0dp"
+                    app:cs_circle_y_radius="0dp"
+                    app:cs_disable_pointer="false"
+                    app:cs_hide_progress_when_empty="true"
+                    app:cs_lock_enabled="true"
+                    app:cs_maintain_equal_circle="true"
+                    app:cs_max="365"
+                    app:cs_move_outside_circle="true"
+                    app:cs_negative_enabled="false"
+                    app:cs_pointer_stroke_width="0dp"
+                    app:cs_progress="0"
+                    app:cs_use_custom_radii="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/streakCounterText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/revolutiongothic_extra_bold"
+                    android:gravity="center"
+                    android:hint="@string/count"
+                    android:text="@string/zero"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/silver"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/circularSeekBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/circularSeekBar"
+                    app:layout_constraintTop_toTopOf="@+id/circularSeekBar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center|start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/revolutiongothic_extra_bold"
+                    android:text="@string/streak"
+                    android:textColor="@color/streak"
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/revolutiongothic_regular"
+                    android:text="@string/motivation_2"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round_6dp_background"
+            android:backgroundTint="@color/light_gray"
+            android:drawableStart="@drawable/baseline_search_24"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/silver"
+            android:hint="@string/search"
+            android:textColorHint="@color/silver"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingVertical="8dp"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textColor="@color/white" />
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:chipSpacing="8dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:checked="true"
+                    android:text="@string/all"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/chip_background"
+                    app:chipStrokeColor="@color/light_gray" />
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/articleRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/items_article" />
+
+            <TextView
+                android:id="@+id/emptyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="@string/no_results_found_according_to_your_search"
+                android:textColor="@color/silver"
+                android:textSize="18sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

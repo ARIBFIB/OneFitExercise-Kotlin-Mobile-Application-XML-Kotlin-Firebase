@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.ebfitapp.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.app.ebfitapp.fragment.CalendarFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.app.ebfitapp.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.app.ebfitapp.fragment.WorkoutFragment"
+        android:label="fragment_workout"
+        tools:layout="@layout/fragment_workout" >
+        <action
+            android:id="@+id/action_workoutFragment_to_workoutsDetailFragment"
+            app:destination="@id/workoutsDetailFragment" />
+        <action
+            android:id="@+id/action_workoutFragment_to_trainersDetailFragment"
+            app:destination="@id/trainersDetailFragment" />
+        <action
+            android:id="@+id/action_workoutFragment_to_musclesDetailFragment"
+            app:destination="@id/musclesDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutsDetailFragment"
+        android:name="com.app.ebfitapp.fragment.WorkoutsDetailFragment"
+        android:label="fragment_workouts_detail"
+        tools:layout="@layout/fragment_workouts_detail" >
+        <argument
+            android:name="workout"
+            app:argType="com.app.ebfitapp.model.PopularWorkoutsModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainersDetailFragment"
+        android:name="com.app.ebfitapp.fragment.TrainersDetailFragment"
+        android:label="fragment_trainers_detail"
+        tools:layout="@layout/fragment_trainers_detail" />
+    <fragment
+        android:id="@+id/musclesDetailFragment"
+        android:name="com.app.ebfitapp.fragment.MusclesDetailFragment"
+        android:label="fragment_muscles_detail"
+        tools:layout="@layout/fragment_muscles_detail" >
+
+        <argument
+            android:name="muscle"
+            app:argType="com.app.ebfitapp.model.MuscleGroupModel" />
+        <action
+            android:id="@+id/action_musclesDetailFragment_to_exerciseOverviewFragment"
+            app:destination="@id/exerciseOverviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseOverviewFragment"
+        android:name="com.app.ebfitapp.fragment.ExerciseOverviewFragment"
+        android:label="fragment_exercise_overview"
+        tools:layout="@layout/fragment_exercise_overview" >
+
+        <argument
+            android:name="exercise"
+            app:argType="com.app.ebfitapp.model.BodyPartExercisesItem"/>
+        <action
+            android:id="@+id/action_exerciseOverviewFragment_to_exerciseExecutionFragment"
+            app:destination="@id/exerciseExecutionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseExecutionFragment"
+        android:name="com.app.ebfitapp.fragment.ExerciseExecutionFragment"
+        android:label="fragment_exercise_execution"
+        tools:layout="@layout/fragment_exercise_execution">
+        <argument
+            android:name="exercise"
+            app:argType="com.app.ebfitapp.model.BodyPartExercisesItem"/>
+        <action
+            android:id="@+id/action_exerciseExecutionFragment_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.app.ebfitapp.fragment.CalculatorFragment"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" >
+        <action
+            android:id="@+id/action_calculatorFragment_to_idealWeightFragment"
+            app:destination="@id/idealWeightFragment" />
+        <action
+            android:id="@+id/action_calculatorFragment_to_oneRmFragment"
+            app:destination="@id/oneRmFragment" />
+        <action
+            android:id="@+id/action_calculatorFragment_to_bodyFatPercentageFragment"
+            app:destination="@id/bodyFatPercentageFragment" />
+        <action
+            android:id="@+id/action_calculatorFragment_to_calorieFragment"
+            app:destination="@id/calorieFragment" />
+        <action
+            android:id="@+id/action_calculatorFragment_to_ropeCalorieBurnedFragment"
+            app:destination="@id/ropeCalorieBurnedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bodyFatPercentageFragment"
+        android:name="com.app.ebfitapp.fragment.BodyFatPercentageFragment"
+        android:label="fragment_body_fat_percentage"
+        tools:layout="@layout/fragment_body_fat_percentage" >
+        <action
+            android:id="@+id/action_bodyFatPercentageFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calorieFragment"
+        android:name="com.app.ebfitapp.fragment.CalorieFragment"
+        android:label="fragment_calorie"
+        tools:layout="@layout/fragment_calorie" >
+        <action
+            android:id="@+id/action_calorieFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/idealWeightFragment"
+        android:name="com.app.ebfitapp.fragment.IdealWeightFragment"
+        android:label="fragment_ideal_weight"
+        tools:layout="@layout/fragment_ideal_weight" >
+        <action
+            android:id="@+id/action_idealWeightFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneRmFragment"
+        android:name="com.app.ebfitapp.fragment.OneRmFragment"
+        android:label="fragment_one_rm"
+        tools:layout="@layout/fragment_one_rm" >
+        <action
+            android:id="@+id/action_oneRmFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.app.ebfitapp.fragment.ProfileEditFragment"
+        android:label="fragment_profile_edit"
+        tools:layout="@layout/fragment_profile_edit" >
+        <action
+            android:id="@+id/action_profileEditFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.app.ebfitapp.fragment.ArticleDetailFragment"
+        android:label="fragment_article_detail"
+        tools:layout="@layout/fragment_article_detail" >
+        <argument
+            android:name="article"
+            app:argType="com.app.ebfitapp.model.ArticleModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/ropeCalorieBurnedFragment"
+        android:name="com.app.ebfitapp.fragment.RopeCalorieBurnedFragment"
+        android:label="fragment_rope_calorie_burned"
+        tools:layout="@layout/fragment_rope_calorie_burned" >
+        <action
+            android:id="@+id/action_ropeCalorieBurnedFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+
+</navigation>

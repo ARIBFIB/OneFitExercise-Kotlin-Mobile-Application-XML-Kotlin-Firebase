@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/toDoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/todo_background"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/itemDay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Fri"
+                android:textSize="24dp"
+                android:fontFamily="@font/revolutiongothic_light"
+                android:gravity="start"
+                android:textColor="#FF0010"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/itemDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="23.11.2023"
+                android:textSize="18dp"
+                android:textColor="#FF0010"
+                android:fontFamily="@font/revolutiongothic_light"
+                android:gravity="top"/>
+
+            <TextView
+                android:id="@+id/toDoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="2dp"
+                android:paddingEnd="5dp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/revolutiongothic_light"
+                android:text="Triceps bastım, birde üst göğüs ile beraber omuz su da var "
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
